@@ -1,0 +1,16 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="buscar-personaje pt-3">
+            <input class="form-control" type="text" name="search" placeholder="Busca un personaje"
+            [(ngModel)]="personajeBuscar">
+            <br>
+        </div>
+    </div>
+    <div class="row">
+        <app-tarjeta *ngFor="let personaje of personajes | filter: personajeBuscar" [personajeTarjeta]="personaje" class="col-12 col-sm-auto text-center" ></app-tarjeta>
+    </div>
+</div>
+
+
+
+

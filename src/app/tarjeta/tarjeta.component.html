@@ -1,0 +1,6 @@
+<div><img src="{{personajeTarjeta.image}}" border="5px"></div>
+<div>{{personajeTarjeta.name}}</div>
+<button *ngIf="clicar==false; else sinDetalles" (click)="detalles()" class="btn btn-warning">Ver detalles</button>
+<ng-template #sinDetalles ><app-detalles [personajeId]="personajeTarjeta.id"></app-detalles></ng-template>
+
+
