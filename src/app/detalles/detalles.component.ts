@@ -8,12 +8,13 @@ import { ServicesService } from '../services.service';
 })
 export class DetallesComponent {
 
-  personajeDetalles: any = null;
-
   @Input() personajeId: any = null;
 
+  personajeDetalles: any = null;
+  editando: boolean = false;
   click:boolean = false;
   ocultar:boolean = false;
+  estasSeguro: any = false;
 
   constructor(private servicio: ServicesService){}
 
@@ -22,9 +23,18 @@ export class DetallesComponent {
     (res => this.personajeDetalles = res);
   }
 
-  detalles(){
-    this.ocultar= !this.ocultar;
-    this.click= false;
+
+  editar(){
+    this.editando = !this.editando;
+  }
+
+
+  borrar(){
+    this.estasSeguro = window.confirm("¿Estás seguro?")
+    if(this.estasSeguro){
+          this.servicio.delete(this.personajeDetalles.id).subscribe
+    (res => this.personajeDetalles = res);
+    }
   }
 
 }

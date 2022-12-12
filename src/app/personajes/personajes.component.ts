@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { ServicesService } from '../services.service';
 
@@ -16,11 +16,17 @@ export class PersonajesComponent implements OnInit{
 
   busqueda:boolean = false;
 
+  @Input() creando: boolean = false;
+
 constructor(private servicio: ServicesService){}
 
   ngOnInit(): void{
     this.servicio.getAll().subscribe
     (res => this.personajes = res);
+  }
+
+  crear(){
+    this.creando = !this.creando;
   }
 
 }

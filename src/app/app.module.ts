@@ -11,6 +11,8 @@ import { FormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { HttpClientModule } from '@angular/common/http';
 import { DetallesComponent } from './detalles/detalles.component';
+import { AddpersonajeComponent } from './addpersonaje/addpersonaje.component';
+import { CrearpersonajeComponent } from './crearpersonaje/crearpersonaje.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { DetallesComponent } from './detalles/detalles.component';
     PersonajesComponent,
     AboutComponent,
     TarjetaComponent,
-    DetallesComponent
+    DetallesComponent,
+    AddpersonajeComponent,
+    CrearpersonajeComponent,
   ],
   imports: [
     BrowserModule,

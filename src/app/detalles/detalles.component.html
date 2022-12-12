@@ -1,5 +1,17 @@
-    <div>Estado: {{personajeDetalles.status}}</div>
-    <div>Sexo: {{personajeDetalles.gender}}</div>
-    <div>Especie: {{personajeDetalles.species}}</div>
-    <div>Localización: {{personajeDetalles.location.name}}</div>
+        <div>Estado: {{personajeDetalles.status}}</div>
+        <div>Sexo: {{personajeDetalles.gender}}</div>
+        <div>Especie: {{personajeDetalles.species}}</div>
+        <div>Localización: {{personajeDetalles.origin}}</div>
+        <button type="button" class="btn btn-warning" (click)="editar()">Editar</button>
+        <button type="button" class="btn btn-danger" (click)="borrar()">Borrar</button>
+        <div *ngIf="editando==true">
+                <app-addpersonaje [personaje]="personajeDetalles" [editando]="true"></app-addpersonaje>
+        </div>
+
+
+
+
+
+
+
 

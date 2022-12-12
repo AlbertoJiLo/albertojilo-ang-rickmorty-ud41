@@ -1,0 +1,39 @@
+<div *ngIf="editando==true">
+    <div class="container-fluid">
+        <div class="row-">
+            <div class="col p-2 text-center">
+                Nombre: <input class="form-control" type="text" placeholder="{{personaje.name}" [(ngModel)]="personaje.name">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col p-2 text-center">
+                Estado: <input class="form-control" type="text" placeholder="{{personaje.status}}" [(ngModel)]="personaje.status">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 p-2 text-center">
+                Especie: <input class="form-control" type="text" placeholder="{{personaje.species}}" [(ngModel)]="personaje.species">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 p-2 text-center">
+                Sexo: <input class="form-control" type="text" placeholder="{{personaje.gender}}" [(ngModel)]="personaje.gender">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 p-2 text-center">
+                Origen: <input class="form-control" type="text" placeholder="{{personaje.origin}}" [(ngModel)]="personaje.origin">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 p-2 text-center">
+                URL Imagen: <input class="form-control" type="text" placeholder="{{personaje.image}}" [(ngModel)]="personaje.image">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 p-2 text-center">
+                <a type="button" class="btn btn-secondary" (click)="enviar()">Enviar</a>
+            </div>
+        </div>
+    </div>
+</div>
