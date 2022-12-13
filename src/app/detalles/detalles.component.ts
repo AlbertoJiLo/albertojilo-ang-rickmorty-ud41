@@ -1,4 +1,6 @@
 import { Component,Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { switchAll } from 'rxjs';
 import { ServicesService } from '../services.service';
 
 @Component({
@@ -16,7 +18,8 @@ export class DetallesComponent {
   ocultar:boolean = false;
   estasSeguro: any = false;
 
-  constructor(private servicio: ServicesService){}
+  constructor(private servicio: ServicesService,
+    private router: Router){}
 
   ngOnInit(): void{
     this.servicio.getById(this.personajeId).subscribe
@@ -35,6 +38,15 @@ export class DetallesComponent {
           this.servicio.delete(this.personajeDetalles.id).subscribe
     (res => this.personajeDetalles = res);
     }
+  }
+
+  borradologico(): void{
+    this.servicio.update(this.personajeDetalles.id, this.personajeDetalles).subscribe
+    (res  => {
+      this.personajeDetalles.logicstatus = 0
+      console.log(res);
+    });
+    alert("Borrado lógico con éxito. El personaje " +this.personajeDetalles.name+ " ha sido borrado")
   }
 
 }

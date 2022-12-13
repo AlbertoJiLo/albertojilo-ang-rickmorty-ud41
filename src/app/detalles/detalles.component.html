@@ -4,6 +4,7 @@
         <div>Localización: {{personajeDetalles.origin}}</div>
         <button type="button" class="btn btn-warning" (click)="editar()">Editar</button>
         <button type="button" class="btn btn-danger" (click)="borrar()">Borrar</button>
+        <button type="button" class="btn btn-danger" (click)="borradologico()">Borrar(L)</button>
         <div *ngIf="editando==true">
                 <app-addpersonaje [personaje]="personajeDetalles" [editando]="true"></app-addpersonaje>
         </div>

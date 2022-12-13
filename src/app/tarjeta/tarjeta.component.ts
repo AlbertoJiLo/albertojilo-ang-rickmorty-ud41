@@ -12,6 +12,8 @@ export class TarjetaComponent implements OnInit {
   @Input() ocultado: boolean = false;
   @Input() clicar: boolean = false;
 
+  status: boolean = true;
+
 
   constructor(){}
 
